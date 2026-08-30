@@ -78,35 +78,25 @@ document.querySelectorAll(".service-card").forEach(card => {
    REVEAL ON SCROLL
 ========================== */
 
-const revealElements =
-  document.querySelectorAll(".reveal");
+const revealElements = document.querySelectorAll(".reveal:not(.process-item)");
 
-const observer =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (entry.isIntersecting) {
-
-          entry.target.classList.add("visible");
-
-          observer.unobserve(entry.target);
-
-        }
-
-      });
-
-    },
-    {
-      threshold: .12
-    }
-  );
+const observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.12
+  }
+);
 
 revealElements.forEach(element => {
   observer.observe(element);
 });
-
 
 /* =========================
    MOBILE MENU

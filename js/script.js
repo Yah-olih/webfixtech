@@ -59,7 +59,7 @@ faqItems.forEach(item => {
    WHATSAPP POR SERVIÇO
 ========================== */
 
-const whatsappNumber = "5511973783133";
+const whatsappNumber = "5511918621446";
 
 document.querySelectorAll(".service-card").forEach(card => {
   card.style.cursor = "pointer";
